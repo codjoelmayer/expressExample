@@ -31,7 +31,7 @@ app.get('/product/:id', async (req, res) => {
     try {
         let data = await getData()
         const id = +req.params.id
-        if (id < data.length) {
+        if (id <= data.length) {
             res.status(200).json(data[id - 1])
         } else {
             res.status(404).json({
